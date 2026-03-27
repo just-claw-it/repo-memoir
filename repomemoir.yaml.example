@@ -1,0 +1,25 @@
+github:
+  token: ${GITHUB_TOKEN}
+  cache_dir: ./.repomemoir-cache
+  cache_ttl_seconds: 3600
+llm:
+  base_url: ${LLM_BASE_URL}
+  api_key: ${LLM_API_KEY}
+  model: ${LLM_MODEL}
+  embedding_model: ${EMBED_MODEL}
+  max_retries: 3
+  retry_backoff_seconds: 1.0
+  embedding_cache_dir: ./.repomemoir-cache
+  embedding_cache_ttl_seconds: 604800
+analysis:
+  max_commits: 5000
+  min_chapter_commits: 5
+  turning_point_deletion_threshold: 500
+  influence_weights:
+    core_commits: 3
+    prs_merged: 2
+    issues_resolved: 1
+    review_comments: 0.5
+output:
+  dir: ./memoirs
+  format: markdown
